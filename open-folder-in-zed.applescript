@@ -2,17 +2,17 @@
 
 # Required parameters:
 # @raycast.schemaVersion 1
-# @raycast.title Open Directory in VSCode
+# @raycast.title Open Directory in Zed
 # @raycast.mode silent
-# @raycast.packageName VS Code
+# @raycast.packageName Zed
 #
 # Optional parameters:
-# @raycast.icon 👩‍💻
+# @raycast.icon 🧑‍💻
 #
 # Documentation:
-# @raycast.description Opens current topmost directory in VSCode
-# @raycast.author chohner
-# @raycast.authorURL https://github.com/chohner
+# @raycast.description Opens current topmost directory in Zed
+# @raycast.author julsh
+# @raycast.authorURL http://jul.sh
 
 tell application "Finder"
 	# Check if there's a selection; works if there's a window open or not.
@@ -40,4 +40,4 @@ tell application "Finder"
 	end if
 end tell
 
-do shell script "open -n -b \"com.microsoft.VSCode\" --args " & quoted form of POSIX path of (p as alias)
+do shell script "open -n -a \"/Applications/Zed.app/Contents/MacOS/cli\" --args " & quoted form of POSIX path of (p as alias)
